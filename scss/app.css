@@ -1,0 +1,147 @@
+@import url("https://fonts.googleapis.com/css2?family=Kalam&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  overflow: hidden;
+}
+
+body {
+  background-image: url("../images/pexels-elijah-o'donnell-3473569.jpg");
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+  font-family: 'Roboto', sans-serif;
+}
+
+body .navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 10vh;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 40px;
+}
+
+body .navbar .nav-text h1 {
+  font-family: 'Kalam', cursive;
+  color: #9ba4b4;
+  font-size: 2rem;
+  z-index: 2;
+}
+
+body .navbar .hamburger {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  cursor: pointer;
+  z-index: 2;
+}
+
+body .navbar .hamburger .line {
+  height: 4px;
+  width: 28px;
+  background: #9ba4b4;
+  border-radius: 6px;
+  margin: 2px 0;
+}
+
+body .nav-links {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 60vh;
+  width: 20vw;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  position: absolute;
+  top: 10vh;
+  pointer-events: none;
+  opacity: 0;
+}
+
+body .nav-links li {
+  margin: 50px 0;
+  opacity: 0;
+}
+
+body .nav-links li:nth-child(1) {
+  -webkit-transition: all 0.3s ease-in 0.2s;
+  transition: all 0.3s ease-in 0.2s;
+}
+
+body .nav-links li:nth-child(2) {
+  -webkit-transition: all 0.4s ease-in 0.4s;
+  transition: all 0.4s ease-in 0.4s;
+}
+
+body .nav-links li:nth-child(3) {
+  -webkit-transition: all 0.5s ease-in 0.6s;
+  transition: all 0.5s ease-in 0.6s;
+}
+
+body .nav-links li.active {
+  opacity: 1;
+}
+
+body .nav-links li a {
+  text-decoration: none;
+  color: #9ba4b4;
+  font-size: 1.2rem;
+}
+
+body .nav-links.open {
+  opacity: 1;
+  pointer-events: all;
+  -webkit-transform: translateY(2%);
+          transform: translateY(2%);
+}
+
+@media (max-width: 900px) {
+  body .nav-links {
+    background: rgba(155, 164, 180, 0.2);
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: -2vh;
+    -webkit-transition: all 1s ease;
+    transition: all 1s ease;
+    pointer-events: none;
+    -webkit-clip-path: circle(100px at -10% -14%);
+            clip-path: circle(100px at -10% -14%);
+  }
+  body .nav-links.open-mobile {
+    -webkit-clip-path: circle(1000px at -10% -12%);
+            clip-path: circle(1000px at -10% -12%);
+    pointer-events: all;
+  }
+}
+/*# sourceMappingURL=app.css.map */

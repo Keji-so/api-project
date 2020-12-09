@@ -1,0 +1,26 @@
+@mixin starter {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+   
+}
+
+@mixin ham-menu {
+            height: 4px;
+            width: 28px;
+            background: #9ba4b4;
+            border-radius: 6px;
+}
+
+@mixin flexProp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin for-tablet-portrait-up {
+    @media (max-width: 900px) {
+            @content;
+    }
+}
