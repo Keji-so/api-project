@@ -15,6 +15,11 @@ body {
     height: 100vh;
     width: 100vw;
     font-family: 'Roboto', sans-serif;
+    overflow: hidden;
+
+    @include for-tablet-portrait-up  {
+        overflow: auto;
+    }
     
     
     
@@ -58,18 +63,26 @@ body {
                 @include flexProp;
                 flex-direction: column;
                 height: 60vh;
-                width: 15vw;
+                width: 12vw;
                 transition: all 0.3s ease;
                 position: absolute;
                 top: 10vh;
                 pointer-events: none;
                 opacity: 0;
 
+                @include for-tablet-portrait-up  {
+                    height: 100vh;
+                    width: 22vw;
+                    top: -10vh;
+                }
+
              li {
                 $self: &;
 
+
+
                  margin: 50px 0;
-                 opacity: 0;
+                opacity: 0;
 
                     &:nth-child(1) {
                         transition: all 0.3s ease-in 0.2s;
@@ -81,51 +94,36 @@ body {
                        transition: all 0.5s ease-in 0.6s;
                     }
 
+                    
+                   
+
                     &.active {
                         opacity: 1;
                   } 
 
                  
-                  a {
+
+
+                 a {
                     text-decoration: none;
                     color: #9ba4b4;
                     font-size: 1.2rem;
 
-                    @include for-tablet-portrait-up  {
-                        color: #fff;
-                        font-size: 1.5rem;
+                   @include for-tablet-portrait-up  {
+                        font-size: 1.3rem;
                     }
 
                 }
-                }
+            }
 
               &.open {
-                  opacity: 1;
+                 opacity: 1;
                   pointer-events: all;
                   transform: translateY(2%);
               }  
 
 
-        @include for-tablet-portrait-up  {
-            $self: &; 
-
-            background: rgba(155, 164, 180, 0.2);
-            position: fixed;
-            width: 100vw;
-            height: 100vh;
-            top: -2vh;
-            transition: all 1s ease;
-            pointer-events: none;
-            clip-path: circle(100px at -10% -14%);
-            
-
-            &.open-mobile {
-                clip-path: circle(1000px at -10% -12%);
-                pointer-events: all;
-                
-                
-            }
-        } 
+    
     }
 
     .content {
@@ -235,20 +233,29 @@ body {
                     padding-bottom: 50%;
                 }
 
-                h3 {
-                    padding-bottom: 20px;
+               .ingredient-heading {
+                    margin-bottom: 15px;
+
+                   h3 {
+                    padding: 5px;
 
                     @include for-tablet-portrait-up  {
                             font-size: 16px;
                             
                     }
                 }
+               } 
 
-                .ingerdient-info {
+                .ingredient-info {
+                    text-align: center;
+                    font-size: 14px;
                     padding: 20px;
+                   // width: 80%;
+                    //height: 30%;
 
                     @include for-tablet-portrait-up  {
-                            font-size: 14px;
+                            font-size: 12px;
+                            padding: 0 20px;
                     }
                 }
 

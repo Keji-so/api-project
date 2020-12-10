@@ -6,7 +6,6 @@
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  overflow: hidden;
 }
 
 body {
@@ -15,6 +14,13 @@ body {
   height: 100vh;
   width: 100vw;
   font-family: 'Roboto', sans-serif;
+  overflow: hidden;
+}
+
+@media (max-width: 900px) {
+  body {
+    overflow: auto;
+  }
 }
 
 body .navbar {
@@ -80,13 +86,21 @@ body .nav-links {
       -ms-flex-direction: column;
           flex-direction: column;
   height: 60vh;
-  width: 15vw;
+  width: 12vw;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
   position: absolute;
   top: 10vh;
   pointer-events: none;
   opacity: 0;
+}
+
+@media (max-width: 900px) {
+  body .nav-links {
+    height: 100vh;
+    width: 22vw;
+    top: -10vh;
+  }
 }
 
 body .nav-links li {
@@ -121,8 +135,7 @@ body .nav-links li a {
 
 @media (max-width: 900px) {
   body .nav-links li a {
-    color: #fff;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
 }
 
@@ -131,26 +144,6 @@ body .nav-links.open {
   pointer-events: all;
   -webkit-transform: translateY(2%);
           transform: translateY(2%);
-}
-
-@media (max-width: 900px) {
-  body .nav-links {
-    background: rgba(155, 164, 180, 0.2);
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-    top: -2vh;
-    -webkit-transition: all 1s ease;
-    transition: all 1s ease;
-    pointer-events: none;
-    -webkit-clip-path: circle(100px at -10% -14%);
-            clip-path: circle(100px at -10% -14%);
-  }
-  body .nav-links.open-mobile {
-    -webkit-clip-path: circle(1000px at -10% -12%);
-            clip-path: circle(1000px at -10% -12%);
-    pointer-events: all;
-  }
 }
 
 body .content {
@@ -290,23 +283,30 @@ body .content .left-content .ingredient {
   }
 }
 
-body .content .left-content .ingredient h3 {
-  padding-bottom: 20px;
+body .content .left-content .ingredient .ingredient-heading {
+  margin-bottom: 15px;
+}
+
+body .content .left-content .ingredient .ingredient-heading h3 {
+  padding: 5px;
 }
 
 @media (max-width: 900px) {
-  body .content .left-content .ingredient h3 {
+  body .content .left-content .ingredient .ingredient-heading h3 {
     font-size: 16px;
   }
 }
 
-body .content .left-content .ingredient .ingerdient-info {
+body .content .left-content .ingredient .ingredient-info {
+  text-align: center;
+  font-size: 14px;
   padding: 20px;
 }
 
 @media (max-width: 900px) {
-  body .content .left-content .ingredient .ingerdient-info {
-    font-size: 14px;
+  body .content .left-content .ingredient .ingredient-info {
+    font-size: 12px;
+    padding: 0 20px;
   }
 }
 
