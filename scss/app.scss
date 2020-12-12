@@ -182,48 +182,29 @@ body {
                   }
 
                   select {
-                      font-size: 1.2rem;
-                      padding: 10px 80px;
+                      font-size: 1.1rem;
+                      padding: 10px 20px;
                       outline: none;
                       border: #fff 1px solid;
                       border-radius:21px;
                       background: #222831;
                       color: #fff;
+                      margin-right: 30px;
 
 
                       @include for-tablet-portrait-up  {
-                        padding: 10px 50px;
-                        margin-left: 20px;
-                        font-size: 1rem;
+                        padding: 10px 10px;
+                        margin-left: 30px;
+                        font-size: 0.8rem;
                       }
                   }
 
-                &:after {
-                    content: "\25BC";
-                    position: relative;
-                    top: -1px;
-                    right: 40px;
-                    padding: 11px;
-                    background: #222831;
-                    color: #fff;
-                    border-radius: 20px;
-                    cursor: pointer;
-
-
-                       @include for-tablet-portrait-up  {
-                        top: 1px;
-                        left: -17%;   
-                        border-radius: 20px;
-                        padding: 8px;
-                    }
-
-                }
-
+             
                
             }
 
             .ingredient {
-                background: 222831;
+                background: #222831;
                 width: 100%;
                 height: 20%;
                 padding-bottom: 40%;
@@ -269,13 +250,34 @@ body {
             @include flexProp;
 
             .slideshow {
-                background: #fff;
+                background: #222831;
+                opacity: 0.7;
                 width: 70%;
                 height: 70%;
                 margin-left: 10%;
+                overflow: hidden;
+                position: relative;
+                border: #9ba4b4 4px solid;
+                border-radius: 2px;
 
                 @include for-tablet-portrait-up  {
                     margin-left: 0;
+                }
+
+
+                .slide {
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    background-position: center center;
+                    transition: all 0.5s ease;
+                    //transform: translateY(100%);
                 }
             }
 
