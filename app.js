@@ -5,8 +5,9 @@ const menu = document.querySelector('.nav-links');
 const links = document.querySelectorAll('.nav-links li');
 const slideShow = document.querySelector('.slideshow');
 const cockTails = document.querySelector('.cocktails');
-const ingredient = document.querySelector('ingredient');
-let i;
+const ingredient = document.querySelector('.ingredient');
+const slide = document.querySelector('.slide');
+
 let alcoholList;
 
 
@@ -30,11 +31,6 @@ async function alcData() {
 
     const data = await cocktailData.json();
     console.log(data);
-    
-
-    // for (var i = 0; i < 20; i++) {
-    //   alcoholList = data.drinks[i].strDrink;
-    // }
 
     createAlcoholList(data.drinks);
     const select = document.querySelector('select');
@@ -66,8 +62,10 @@ function createAlcoholList(item) {
 function createAlcoholSlider(e, item) {
     const findValue = e.target.value;
     const currentData = item.find(arr => arr.strDrink === findValue);
-    slideShow.innerHTML = 
-       `<div class="slide" style="background-image: url('${currentData.strDrinkThumb}')"></div>`
+    const alcUrl = currentData.strDrinkThumb;
+    console.log(currentData.strDrinkThumb);
+    slide.style.backgroundImage = `url("${alcUrl}")`;
+    
 }
 
 
